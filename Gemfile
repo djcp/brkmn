@@ -8,6 +8,7 @@ gem 'rails'
 gem 'pg'
 gem 'will_paginate'
 gem 'haml'
+gem 'clearance'
 gem 'base32-crockford'
 
 # Gems used only for assets and not required

@@ -1,5 +1,5 @@
 class UrlsController < ApplicationController
-  before_filter :is_authenticated
+  before_filter :authorize
 
   def bookmarklet
     @page_title = "Shorten a URL - #{REDIRECT_DOMAIN}"
@@ -24,7 +24,7 @@ class UrlsController < ApplicationController
       :to => params[:url][:to]
     )
     @url.user_id = current_user.id
-    
+
     respond_to do |f|
       f.html {
         if @url.save
